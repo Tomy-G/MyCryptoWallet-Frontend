@@ -1,19 +1,20 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-
-import { PrivateRoutingModule } from './private-routing.module';
-import { DashboardModule } from './dashboard/dashboard.module';
+import { NavbarComponent } from './components/navbar/navbar.component';
 import { MaterialModule } from '../material/material.module';
+
 
 
 @NgModule({
   declarations: [
+    NavbarComponent
   ],
   imports: [
     CommonModule,
-    PrivateRoutingModule,
-    DashboardModule,
     MaterialModule
+  ],
+  exports: [
+    NavbarComponent
   ]
 })
-export class PrivateModule { }
+export class SharedModule { }

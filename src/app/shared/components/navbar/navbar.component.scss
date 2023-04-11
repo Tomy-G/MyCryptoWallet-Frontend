@@ -1,0 +1,41 @@
+.container {
+    display: flex;
+    align-items: center;
+    justify-items: center;
+    height: 8vh;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 15px -3px, rgba(0, 0, 0, 0.05) 0px 4px 6px -2px;
+    flex-direction: row;
+    position: sticky;
+  }
+  .main{
+    margin-left: 10vw;
+    width: 6vw;
+  }
+  .logo {
+    width: 100%;
+  }
+
+  .profile-pic{
+    margin-left: 50vw;
+    width: 6vw;
+    
+  }
+
+  .pic {
+    width: 100%;
+    border-radius: 100%;
+  }
+
+  .data{
+    display: flex;
+    flex-direction: column;
+    margin-left: 2vw;
+  }
+
+  .logout{
+    margin-left: 2vw;
+    background: linear-gradient(204.38deg, #B874FF -56.63%, #68B3FF 102.33%);
+box-shadow: 18px 19px 41px rgba(54, 67, 92, 0.1);
+color: white;
+
+  }
