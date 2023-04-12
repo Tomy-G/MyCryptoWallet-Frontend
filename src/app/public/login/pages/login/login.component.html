@@ -1,0 +1,27 @@
+
+<div class="wrapper">
+    <div class="gradient-background">
+    
+    </div>
+    
+    <div class="content">
+        <h1 class="title">Welcome back!</h1>
+        <form #loginForm="ngForm" class="form-login" (ngSubmit)="onSubmit()">
+            <mat-form-field>
+              <input matInput placeholder="Username" [(ngModel)]="username" name="username" required>
+              <mat-error>
+                Please provide a valid username
+              </mat-error>
+            </mat-form-field>
+            <mat-form-field>
+              <input matInput type="password" placeholder="Password" [(ngModel)]="password" name="password" required>
+              <mat-error>
+                Please provide a valid password
+              </mat-error>
+            </mat-form-field>
+            <h2 class="error-msg" *ngIf="errorMsg">{{errorMsg}}</h2>
+            <button mat-raised-button class="login-button" >LOGIN</button>
+          </form>
+    </div>
+    
+</div>

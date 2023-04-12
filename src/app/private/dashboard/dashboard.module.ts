@@ -10,6 +10,7 @@ import { MatSortModule } from '@angular/material/sort';
 import { MatInputModule } from '@angular/material/input';
 import { ReactiveFormsModule } from '@angular/forms';
 import { MaterialModule } from 'src/app/material/material.module';
+import { HttpClientModule } from '@angular/common/http';
 
 
 
@@ -22,6 +23,7 @@ import { MaterialModule } from 'src/app/material/material.module';
     CommonModule,
     DashboardRoutingModule,
     MatTableModule, MatFormFieldModule, MatPaginatorModule,MatInputModule, MatSortModule, ReactiveFormsModule,
+    HttpClientModule,
     MaterialModule
   ],
   exports: [

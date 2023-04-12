@@ -7,6 +7,7 @@ import { PrivateModule } from './private/private.module';
 import { PublicModule } from './public/public.module';
 import { SharedModule } from './shared/shared.module';
 import { DashboardModule } from './private/dashboard/dashboard.module';
+import { LoginModule } from './public/login/login.module';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,7 @@ import { DashboardModule } from './private/dashboard/dashboard.module';
     PrivateModule,
     PublicModule,
     SharedModule,
-    DashboardModule
+    DashboardModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
