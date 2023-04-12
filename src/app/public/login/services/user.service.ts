@@ -8,6 +8,7 @@ import { UserInterface } from "../models/user.model";
 })
 
 export class UserService{
+    public isLogged : boolean = false;
     private loginUrl:string = "http://localhost:5000/api/users/login"
     constructor(private http:HttpClient){}
 
@@ -18,6 +19,10 @@ export class UserService{
         }
         // TO-DO: tratar el error 500
         return this.http.post<UserInterface>(this.loginUrl, body);
+    }
+
+    getIsLogged() : Boolean{
+        return this.isLogged;
     }
 
     

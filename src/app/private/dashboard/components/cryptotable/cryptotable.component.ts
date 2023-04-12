@@ -28,14 +28,15 @@ export class CryptotableComponent implements OnInit {
   ngOnInit() {
     this.cryptoService.getAllCryptos().subscribe((data) => {
       this.cryptos = data;
+      this.cryptoService.getCryptosUserByUserId(this.userId).subscribe((data) => {
+        this.userCryptos = data;
+        this.addCryptoUserData();
+        this.dataSource = new MatTableDataSource(this.cryptos);
+        this.dataSource.sort = this.sort;
+        this.dataSource.paginator = this.paginator;
+      });
     });
-    this.cryptoService.getCryptosUserByUserId(this.userId).subscribe((data) => {
-      this.userCryptos = data;
-      this.addCryptoUserData();
-      this.dataSource = new MatTableDataSource(this.cryptos);
-      this.dataSource.sort = this.sort;
-      this.dataSource.paginator = this.paginator;
-    });
+    
   }
 
   addCryptoUserData(){

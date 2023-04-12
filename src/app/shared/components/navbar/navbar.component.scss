@@ -1,45 +1,60 @@
 .container {
-    display: flex;
-    align-items: center;
-    justify-items: center;
-    height: 8vh;
-    // box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 15px -3px, rgba(0, 0, 0, 0.05) 0px 4px 6px -2px;
-    flex-direction: row;
-    position: absolute;
-    top: 0;
-    left: 0;
-    z-index: 100;
-    background: rgba(0,0,0,0);
-  }
-  .main{
-    margin-left: 10vw;
-    width: 6vw;
-  }
-  .logo {
-    width: 100%;
-  }
+  display: flex;
+  align-items: center;
+  justify-items: center;
+  height: 8vh;
+  // box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 15px -3px, rgba(0, 0, 0, 0.05) 0px 4px 6px -2px;
+  flex-direction: row;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 100;
+  background: rgba(0, 0, 0, 0);
+}
+.main {
+  margin-left: 10vw;
+  width: 6vw;
+}
+.logo {
+  width: 100%;
+}
 
-  .profile-pic{
-    margin-left: 50vw;
-    width: 6vw;
-    
-  }
+.profile-pic {
+  margin-left: 50vw;
+  
+}
 
-  .pic {
-    width: 100%;
-    border-radius: 100%;
-  }
+.pic {
+  width: 100%;
+  border-radius: 100%;
+  object-fit: cover;
+  width: 3vw;
+  
+  height: 3vw;
+}
 
-  .data{
-    display: flex;
-    flex-direction: column;
-    margin-left: 2vw;
-  }
+.data {
+  display: flex;
+  flex-direction: column;
+  margin-left: 2vw;
+}
 
-  .logout{
-    margin-left: 2vw;
-    background: linear-gradient(204.38deg, #B874FF -56.63%, #68B3FF 102.33%);
-box-shadow: 18px 19px 41px rgba(54, 67, 92, 0.1);
-color: white;
+.logout {
+  margin-left: 2vw;
+  background: linear-gradient(204.38deg, #b874ff -56.63%, #68b3ff 102.33%);
+  box-shadow: 18px 19px 41px rgba(54, 67, 92, 0.1);
+  color: white;
+}
 
-  }
+.register {
+  margin-left: 60vw;
+  color: #68b3ff;
+  box-shadow: 18px 19px 41px rgba(54, 67, 92, 0.1);
+  background-color: white;
+}
+
+.name{
+  margin-bottom: 1vh;
+  margin-top: 2vh;
+
+}
