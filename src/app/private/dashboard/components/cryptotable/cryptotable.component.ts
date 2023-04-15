@@ -12,11 +12,13 @@ import { CryptoUserInterface } from '../../models/cryptoUser.model';
   styleUrls: ['./cryptotable.component.scss'],
 })
 export class CryptotableComponent implements OnInit {
-  displayedColumns: string[] = ['id', 'value', 'stock', 'amount'];
+  displayedColumns: string[] = ['name', 'value', 'stock', 'amount', 'trade'];
   dataSource: MatTableDataSource<CryptoInterface>;
 
   @ViewChild(MatPaginator) paginator: MatPaginator;
   @ViewChild(MatSort) sort: MatSort;
+
+  user: string | null = sessionStorage.getItem('user');
 
   cryptos: CryptoInterface[];
 
@@ -45,6 +47,8 @@ export class CryptotableComponent implements OnInit {
       if(found){
         obj.amount = found.amount;
         obj.userId = found.userId;
+      }else{
+        obj.amount = 0;
       }
     })
   }

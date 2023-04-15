@@ -4,18 +4,26 @@ table {
 
 .mat-form-field {
   font-size: 14px;
-   width: 18%;
+  width: 18%;
 }
 
-td, th {
+td,
+th {
   width: 25%;
 }
 
-.table{
+.table {
   margin-left: 10vw;
   margin-right: 10vw;
+  border-radius: 10px;
+  overflow: hidden !important;
 }
-.filter{
+.filter {
   margin-left: 10vw;
-  
+}
+
+.trade-button{
+  background: linear-gradient(204.38deg, #b874ff -80.63%, #68b3ff 102.33%);
+  box-shadow: 18px 19px 41px rgba(54, 67, 92, 0.1);
+  color: white;
 }

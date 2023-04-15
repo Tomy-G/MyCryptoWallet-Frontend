@@ -31,6 +31,7 @@ export class LoginComponent implements OnInit {
         (data) => {
           if (data.userId) {
             sessionStorage.setItem('user', JSON.stringify(data));
+            console.log(data);
             this.userService.isLogged = true;
             this.navigateTo();
           }
