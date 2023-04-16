@@ -8,13 +8,14 @@
         <h1 class="title">Welcome back!</h1>
         <form #loginForm="ngForm" class="form-login" (ngSubmit)="onSubmit()">
             <mat-form-field>
-              <input matInput placeholder="Username" [(ngModel)]="username" name="username" required>
+              <input matInput [formControl]="username" placeholder="Username"  name="username" >
+              <!-- [(ngModel)]="username" -->
               <mat-error>
                 Please provide a valid username
               </mat-error>
             </mat-form-field>
             <mat-form-field>
-              <input matInput type="password" placeholder="Password" [(ngModel)]="password" name="password" required>
+              <input matInput type="password" placeholder="Password" [formControl]="password" name="password" >
               <mat-error>
                 Please provide a valid password
               </mat-error>

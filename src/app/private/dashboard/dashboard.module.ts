@@ -11,13 +11,15 @@ import { MatInputModule } from '@angular/material/input';
 import { ReactiveFormsModule } from '@angular/forms';
 import { MaterialModule } from 'src/app/material/material.module';
 import { HttpClientModule } from '@angular/common/http';
+import { TrademodalComponent } from './components/trademodal/trademodal.component';
 
 
 
 @NgModule({
   declarations: [
     CryptotableComponent,
-    DashboardComponent
+    DashboardComponent,
+    TrademodalComponent
   ],
   imports: [
     CommonModule,

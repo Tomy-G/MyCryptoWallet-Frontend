@@ -22,8 +22,13 @@ th {
   margin-left: 10vw;
 }
 
-.trade-button{
+.trade-button {
   background: linear-gradient(204.38deg, #b874ff -80.63%, #68b3ff 102.33%);
   box-shadow: 18px 19px 41px rgba(54, 67, 92, 0.1);
   color: white;
+}
+::ng-deep {
+  mat-dialog-container {
+    border-radius: 12px !important;
+  }
 }

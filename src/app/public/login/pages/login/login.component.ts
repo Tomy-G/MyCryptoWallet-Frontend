@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { UserService } from '../../services/user.service';
 import { Router } from '@angular/router';
+import { FormControl, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-login',
@@ -9,8 +10,12 @@ import { Router } from '@angular/router';
 })
 export class LoginComponent implements OnInit {
 
-  public username = '';
-  public password = '';
+  // public username = '';
+  // public password = '';
+
+  username = new FormControl('', [Validators.required, Validators.minLength(5)]);
+  password = new FormControl('', [Validators.required, Validators.minLength(5)]);
+
 
   errorMsg : string = "";
 
@@ -24,9 +29,10 @@ export class LoginComponent implements OnInit {
   }
 
   login() {
-    console.log(this.username + ', ' + this.password);
+    if(!this.username.hasError('minLength(5)') && !this.password.hasError('minLength(5)')){
+      console.log(this.username + ', ' + this.password);
     this.userService
-      .getUserbyEmailAndPassword(this.username, this.password)
+      .getUserbyEmailAndPassword(this.username.value, this.password.value)
       .subscribe(
         (data) => {
           if (data.userId) {
@@ -40,6 +46,8 @@ export class LoginComponent implements OnInit {
           this.handleError(err);
         }
       );
+    }
+    
   }
 
   handleError(error: any) {

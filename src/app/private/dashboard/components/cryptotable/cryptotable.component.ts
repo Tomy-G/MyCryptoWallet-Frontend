@@ -5,6 +5,8 @@ import { MatTableDataSource } from '@angular/material/table';
 import { CryptoService } from '../../services/crypto.service';
 import { CryptoInterface } from '../../models/crypto.model';
 import { CryptoUserInterface } from '../../models/cryptoUser.model';
+import {MatDialog} from '@angular/material/dialog';
+import { TrademodalComponent } from '../trademodal/trademodal.component';
 
 @Component({
   selector: 'app-cryptotable',
@@ -26,7 +28,13 @@ export class CryptotableComponent implements OnInit {
 
   userId: string = '810f8e0a-c7bb-11ed-afa1-0242ac120002';
 
-  constructor(private cryptoService: CryptoService) {}
+  constructor(private cryptoService: CryptoService, public dialog: MatDialog) {
+  }
+
+  openDialog() {
+    this.dialog.open(TrademodalComponent);
+  }
+
   ngOnInit() {
     this.cryptoService.getAllCryptos().subscribe((data) => {
       this.cryptos = data;

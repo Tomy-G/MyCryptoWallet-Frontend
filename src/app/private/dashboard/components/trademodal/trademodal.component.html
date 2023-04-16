@@ -1,0 +1,30 @@
+<!-- <h1 mat-dialog-title>Dialog with elements</h1>
+<div mat-dialog-content>This dialog showcases the title, close, content and actions elements.</div>
+<div mat-dialog-actions>
+  <button mat-button mat-dialog-close>Close</button>
+</div> -->
+
+<div class="content" mat-dialog-content>
+  <mat-tab-group mat-stretch-tabs animationDuration="1000ms">
+    <mat-tab disabled="false" label="BUY">
+      <form #buyForm="ngForm">
+        <div class="buy-input">
+          <mat-label>YOU PAY</mat-label>
+          <mat-form-field appearance="outline">
+            <input matInput type="number" #pay value="{{toNumber(get.value) /5}}"/>
+          </mat-form-field>
+        </div>
+        <div class="get-input">
+          <mat-label>YOU GET</mat-label>
+          <mat-form-field appearance="outline">
+            <input matInput type="number" #get value="{{5 * toNumber(pay.value)}}" />
+          </mat-form-field>
+        </div>
+        <h3 class="error">Ha habido un error</h3>
+        <button mat-raised-button class="button" >BUY</button>
+      </form>
+    </mat-tab>
+
+    <mat-tab label="SELL">Content 2</mat-tab>
+  </mat-tab-group>
+</div>
