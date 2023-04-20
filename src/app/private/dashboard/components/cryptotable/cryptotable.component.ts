@@ -31,8 +31,19 @@ export class CryptotableComponent implements OnInit {
   constructor(private cryptoService: CryptoService, public dialog: MatDialog) {
   }
 
-  openDialog() {
-    this.dialog.open(TrademodalComponent);
+  openDialog(row : any) {
+    const rowIndex = this.cryptos.indexOf(row);
+    this.dialog.open(TrademodalComponent,  {
+      data: {
+        cryptoId: this.cryptos[rowIndex].cryptoId,
+        cryptoname: this.cryptos[rowIndex].cryptoname,
+        value: this.cryptos[rowIndex].value,
+        icon: this.cryptos[rowIndex].icon,
+        asset: this.cryptos[rowIndex].asset,
+        stock: this.cryptos[rowIndex].stock,
+        amount: this.cryptos[rowIndex].amount
+      },
+    });
   }
 
   ngOnInit() {

@@ -7,17 +7,17 @@
 <div class="content" mat-dialog-content>
   <mat-tab-group mat-stretch-tabs animationDuration="1000ms">
     <mat-tab disabled="false" label="BUY">
-      <form #buyForm="ngForm">
+      <form #buyForm="ngForm" (ngSubmit)="onSubmit()">
         <div class="buy-input">
           <mat-label>YOU PAY</mat-label>
           <mat-form-field appearance="outline">
-            <input matInput type="number" #pay value="{{toNumber(get.value) /5}}"/>
+            <input (keyup)="refreshGet()" matInput type="number" [formControl]="pay"/>
           </mat-form-field>
         </div>
         <div class="get-input">
           <mat-label>YOU GET</mat-label>
           <mat-form-field appearance="outline">
-            <input matInput type="number" #get value="{{5 * toNumber(pay.value)}}" />
+            <input (keyup)="refreshPay()" matInput type="number"  [formControl]="get" />
           </mat-form-field>
         </div>
         <h3 class="error">Ha habido un error</h3>

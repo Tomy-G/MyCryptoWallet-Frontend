@@ -6,60 +6,66 @@ import { FormControl, Validators } from '@angular/forms';
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
-  styleUrls: ['./login.component.scss']
+  styleUrls: ['./login.component.scss'],
 })
 export class LoginComponent implements OnInit {
-
   // public username = '';
   // public password = '';
 
-  username = new FormControl('', [Validators.required, Validators.minLength(5)]);
-  password = new FormControl('', [Validators.required, Validators.minLength(5)]);
+  username = new FormControl('', [
+    Validators.required,
+    Validators.minLength(4),
+  ]);
+  password = new FormControl('', [
+    Validators.required,
+    Validators.minLength(4),
+  ]);
 
+  errorMsg: string = '';
 
-  errorMsg : string = "";
-
-  constructor(private router: Router, private userService: UserService) { }
+  constructor(private router: Router, private userService: UserService) {}
 
   ngOnInit(): void {
     this.userService.isLogged = false;
   }
   public onSubmit(): void {
-    this.login()
+    this.login();
   }
 
   login() {
-    if(!this.username.hasError('minLength(5)') && !this.password.hasError('minLength(5)')){
-      console.log(this.username + ', ' + this.password);
-    this.userService
-      .getUserbyEmailAndPassword(this.username.value, this.password.value)
-      .subscribe(
-        (data) => {
-          if (data.userId) {
-            sessionStorage.setItem('user', JSON.stringify(data));
-            console.log(data);
-            this.userService.isLogged = true;
-            this.navigateTo();
+    if (
+      !this.username.hasError('required') &&
+      !this.password.hasError('required') &&
+      !this.username.hasError('minlength') &&
+      !this.password.hasError('minlength')
+    ) {
+      console.log('XFFFF' + this.username + ', ' + this.password);
+      this.userService
+        .getUserbyEmailAndPassword(this.username.value, this.password.value)
+        .subscribe(
+          (data) => {
+            if (data.userId) {
+              sessionStorage.setItem('user', JSON.stringify(data));
+              console.log(data);
+              this.userService.isLogged = true;
+              this.navigateTo();
+            }
+          },
+          (err) => {
+            this.handleError(err);
           }
-        },
-        (err) => {
-          this.handleError(err);
-        }
-      );
+        );
     }
-    
   }
 
   handleError(error: any) {
     if (error.status === 500) {
       //  Show error message
-      this.errorMsg = "El usuario no existe"
+      this.errorMsg = 'El usuario no existe';
     }
   }
 
-  navigateTo(){
+  navigateTo() {
     this.router.navigate(['/dashboard']);
   }
-
-
 }
