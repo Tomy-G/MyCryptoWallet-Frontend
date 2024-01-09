@@ -20,6 +20,8 @@ export class CryptotableComponent implements OnInit {
   @ViewChild(MatPaginator) paginator: MatPaginator;
   @ViewChild(MatSort) sort: MatSort;
 
+  cantidad : number = 0;
+
   user: string | null = sessionStorage.getItem('user');
 
   cryptos: CryptoInterface[];
